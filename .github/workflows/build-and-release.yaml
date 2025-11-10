@@ -1,4 +1,4 @@
-name: Container & Binary Release
+name: Binary & Container Release
 
 permissions:
   id-token: write
