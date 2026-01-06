@@ -54,15 +54,28 @@ changelog:
       - "^docs:"
   sort: asc # Sort commits chronologically (oldest to newest)
   groups:   # organize your changelog into categories using regular expressions, start commit with feat: or fix:
-    - title: "🚀 Features"
-      regexp: "^.*?feat(\\([\\w]+\\))?!?:.+$"
-      order: 0
-    - title: "🐛 Bug Fixes"
-      regexp: "^.*?fix(\\([\\w]+\\))?!?:.+$"
-      order: 1
-    - title: "🛠 Maintenance"
-      regexp: "^.*?chore(\\([\\w]+\\))?!?:.+$"
-      order: 2
+    # https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional
+    - title: '🛠 Dependency updates'
+      regexp: '^fix\(deps\):|^feat\(deps\):'
+      order: 300
+    - title: '✨ New Features'
+      regexp: '^feat(\([^)]*\))?:'
+      order: 100
+    - title: '🐛 Bug fixes'
+      regexp: '^fix(\([^)]*\))?:'
+      order: 200
+    - title: '📖 Documentation updates'
+      regexp: '^docs(\([^)]*\))?:'
+      order: 400
+    - title: '🛡️ Security updates'
+      regexp: '^sec(\([^)]*\))?:'
+      order: 500
+    - title: '🚀 Build process updates'
+      regexp: '^(build|ci)(\([^)]*\))?:'
+      order: 600
+    - title: '📦 Other work'
+      regexp: '^chore(\([^)]*\))?:|^chore:'
+      order: 9999
 
 # To check deprecations:
 # https://goreleaser.com/deprecations/
