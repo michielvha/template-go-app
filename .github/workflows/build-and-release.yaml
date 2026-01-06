@@ -26,6 +26,8 @@ jobs:
           fetch-depth: 0  # Fetch all the history for GitVersion
           persist-credentials: true
 
+      # TODO: add lint / test / scanning steps here
+
       # 2: Call our custom `GitVersion action` to tag the repo
       - name: Tag with GitVersion
         id: gitversion
