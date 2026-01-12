@@ -45,7 +45,7 @@ signs:
 release:
   draft: false
 changelog:
-  use: git
+  use: git # or remove below and just use: github-native
   filters:
     include:
       - "^feat:"
